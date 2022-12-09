@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,8 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
     AppRoutingModule,
     AuthenticationModule,
     AngularMeterialModule,
-    
+    FlexModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

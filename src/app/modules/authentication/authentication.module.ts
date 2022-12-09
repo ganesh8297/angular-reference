@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularMeterialModule } from '../angular-meterial/angular-meterial.module';
+import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { AngularMeterialModule } from '../angular-meterial/angular-meterial.modu
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    AngularMeterialModule
+    AngularMeterialModule,
+    FlexModule,
+    FlexLayoutModule
   ]
 })
 export class AuthenticationModule { }
