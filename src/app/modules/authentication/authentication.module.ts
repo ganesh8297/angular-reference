@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularMeterialModule } from '../angular-meterial/angular-meterial.module';
 import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
     AngularMeterialModule,
     FlexModule,
     FlexLayoutModule
-  ]
+  ],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
+
 })
 export class AuthenticationModule { }
