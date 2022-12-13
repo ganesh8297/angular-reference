@@ -1,0 +1,13 @@
+<div style="text-align:center !important">
+    <p>Weather API</p>
+    <input type="text" #city>
+    <button (click)="getweather(city.value)">SUBMIT</button>
+
+
+    <div class="alert" id="alert" [ngClass]="alert == true ? 'show' : 'hide'">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+       Location Doesn't Exist
+    </div>
+
+    
+</div>

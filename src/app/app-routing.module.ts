@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WeatherApiComponent } from './weather-api/weather-api.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,10 @@ const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
   },
+  {
+    path: "weather", component: WeatherApiComponent
 
+  },
 ];
 
 
