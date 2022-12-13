@@ -20,3 +20,16 @@
 .hide {
     visibility: hidden;
 }
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+  }
+
+  table, td, th {
+    border: 1px solid;
+  }
+
+  .counter, p{
+    display: inline;
+  }

@@ -6,8 +6,29 @@
 
     <div class="alert" id="alert" [ngClass]="alert == true ? 'show' : 'hide'">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-       Location Doesn't Exist
+        Location Doesn't Exist
     </div>
 
-    
+
+    <table id="excel-table">
+        <tr>
+          <th>City</th>
+          <th>Minimun Temprature</th>
+          <th>Maximum Temprature</th>
+        </tr>
+        <tr>
+          <td>{{alert == false ? (city.value | titlecase)   : "Nil" }}</td>
+          <td>{{alert == false ? weatherDetails.mintemp : "Nil"}}</td>
+          <td>{{alert == false ? weatherDetails.maxtemp : "Nil"}}</td>
+        </tr>
+      </table>
+    <button (click)="exportData()" style="margin-top:5px">EXPORT DATA</button><br><br>
+
+    <div class="counter">
+        <p><u>Counter</u></p><br><br>
+        <p>  Days : {{days}}</p>
+        <p>  Hours : {{hours}}</p>
+        <p>  Minutes : {{mins}}</p>
+        <p>  Seconds : {{seconds}}</p>
+    </div>
 </div>
