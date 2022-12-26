@@ -8,8 +8,85 @@ body {
     font-family: Roboto-Regular;
     font-family: 'Open Sans', sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import 'assets/variable.scss';
+
+
+body {
+    max-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--bgacolor);
+    color: var(--ccolor);
+}
+
+/* Botones para cambiar tema */
+.cambiar-tema {
+    position: absolute;
+    right: 70px;
+    top: 70px;
+}
+
+.cambiar-tema #btn-light {
+    display: none;
+}
+
+.cambiar-tema .btn {
+    margin: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.cambiar-tema .btn i {
+    color: var(--primary);
+    font-size: 25px;
+    transition: 0.1s;
+}
+
+.cambiar-tema button i:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Contenido */
+section {
+    max-width: 800px;
+    height: 100%;
+    margin: 15% auto 0 auto;
+}
+
+h1 {
+    color: var(--dcolor);
+    font-size: 45px;
+}
+
+section .text-primary {
+    color: var(--primary);
+}
+
+/* Enlace principal */
+a.primary-link {
+    background-color: var(--bgacolor);
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+a.primary-link:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+}

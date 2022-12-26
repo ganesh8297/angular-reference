@@ -1,0 +1,15 @@
+:root {
+    --primary: #f35b5d;
+    --bgacolor: #ffff;
+    --bcolor: #dadada;
+    --ccolor: #242424;
+    --dcolor: #000000;
+}
+
+:root[data-theme="dark"] {
+    --primary: #f35b5d;
+    --bgacolor: #121212ee;
+    --bcolor: #242424;
+    --ccolor: yellow !important;
+    --dcolor: #ffffff;
+}
