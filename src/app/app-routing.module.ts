@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsComponent } from './forms/forms.component';
 import { WeatherApiComponent } from './weather-api/weather-api.component';
 
 const routes: Routes = [
@@ -18,6 +19,11 @@ const routes: Routes = [
   },
   {
     path: "weather", component: WeatherApiComponent
+
+  },
+
+  {
+    path: "forms", component: FormsComponent
 
   },
 ];
