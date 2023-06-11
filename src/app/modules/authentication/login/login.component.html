@@ -1,20 +1,74 @@
-<form>
+<div>
+    <p class="text-center header m-5">
+        Choose Account Type
+    </p>
+    <div fxLayoutAlign="space-evenly center">
+        <div [ngStyle]=" {'border':  tickVisible && accType == 'ADMIN' ? '2px solid #F3AB59' : '' }"
+            (click)="selectAccount('ADMIN')" class="card wallet">
+            <div class="overlay"></div>
+            <div class="circle">
+                <img class="img" src="https://icraftsoft.io/wp-content/uploads/2021/10/Zewdu.png" alt="">
+            </div>
+            <p class="text-center header">ADMIN <span><mat-icon *ngIf="tickVisible && accType == 'ADMIN' "
+                        class="tickIcon">check_circle_outline</mat-icon></span>
+            </p>
+        </div>
+        <div [ngStyle]=" {'border':  tickVisible && accType == 'TEACHER' ? '2px solid #F3AB59' : '' }"
+            (click)="selectAccount('TEACHER')" class="card wallet">
+            <div class="overlay"></div>
+            <div class="circle">
+                <img class="img"
+                    src="https://cdn2.iconfinder.com/data/icons/school-flat-circle/512/Guy_hipster_jumper_man_teacher_sir-512.png"
+                    alt="">
+            </div>
+            <p class="text-center header">TEACHER <span><mat-icon *ngIf="tickVisible && accType == 'TEACHER' "
+                        class="tickIcon">check_circle_outline</mat-icon></span></p>
+        </div>
+        <div [ngStyle]=" {'border':  tickVisible && accType == 'STUDENT' ? '2px solid #F3AB59' : '' }"
+            (click)="selectAccount('STUDENT')" class="card wallet">
+            <div class="overlay"></div>
+            <div class="circle">
+                <img class="img"
+                    src="https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_person_people_avatar_icon_159366.png"
+                    alt="">
+            </div>
+            <p class="text-center header">STUDENT <span><mat-icon *ngIf="tickVisible && accType == 'STUDENT' "
+                        class="tickIcon">check_circle_outline</mat-icon></span></p>
+        </div>
+    </div>
+</div>
+
+
+<form class="p-5">
+    <p class="text-left header">
+        {{accType}} LOGIN
+    </p>
     <div fxLayout="column" fxLayoutAlign="space-around stretch">
         <mat-label>
             USERNAME*
         </mat-label>
         <mat-form-field appearance="outline">
-            <mat-label>Outline form field</mat-label>
-            <input matInput placeholder="Placeholder">
+            <mat-label>ENTER YOUR USERNAME</mat-label>
+            <input matInput placeholder="">
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
         <mat-label>
             PASSWORD*
         </mat-label>
         <mat-form-field appearance="outline">
-            <mat-label>Outline form field</mat-label>
-            <input matInput placeholder="Placeholder">
+            <mat-label> ENTER YOUR PASSWORD</mat-label>
+            <input matInput placeholder="">
         </mat-form-field>
-        <button mat-raised-button color="primary">Log in</button>
+
+        <button mat-raised-button class="primary-btn mt-4 mb-4">Log in</button>
+        <button (click)="register()" mat-stroked-button class="mt-4">Register</button>
+        <!-- <div class="mt-4" fxLayout="column" fxLayoutAlign="space-between end">
+            <p class="text-center subtitle mt-4 p-1">Continue with <button mat-fab disabled
+                    aria-label="Example icon button with a heart icon">
+                    <img id="googleLogo"
+                        src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
+                        alt="">
+                </button></p>
+        </div> -->
     </div>
 </form>

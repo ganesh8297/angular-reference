@@ -7,6 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import {DataSource} from '@angular/cdk/collections';
+import {MatTableModule,MatTableDataSource} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -20,8 +23,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatChipsModule,
     MatInputModule,
-    MatTabsModule
-
+    MatTabsModule,
+    MatTableModule ,
+    MatCardModule
   ]
 })
 export class AngularMeterialModule { }

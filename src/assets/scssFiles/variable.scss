@@ -1,0 +1,22 @@
+:root {
+    --primary: #363636;
+    --secondary: #cd527c;
+    --tertiary: #a8a8a8;
+    --success: #53d2db;
+    --warnig: #ffe3b3;
+    --danger: #e9185f;
+
+    --appBackground: #ffffff;
+    --appFont: #121212;
+
+}
+
+:root[data-theme="dark"] {
+    --primary: rgb(158, 136, 246);
+    // --bgacolor: #121212ee;
+    // --bcolor: #242424;
+    // --ccolor: yellow !important;
+    // --dcolor: #ffffff;
+    --appBackground: #222423;
+    --appFont: #ffffff;
+}

@@ -1,0 +1,15 @@
+img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.carousel{
+    position: fixed !important;
+    top: 0;
+    left:0;
+    width: 50vw !important;
+}
+.carousel-indicators .active {
+    background-color: rgb(243, 171, 89) !important;
+
+}

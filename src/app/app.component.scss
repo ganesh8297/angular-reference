@@ -1,0 +1,36 @@
+h3 {
+    font-family: Verdana;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  input{
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid red;
+  }
+  input:focus{
+    border-bottom: 2px solid red;
+    outline: none !important;
+  }
+
+  .btn-primary:focus{
+    background-color: aqua;
+    :disabled{
+        background-color: bisque;
+    }
+  }
+  ::ng-deep  tr:hover {
+    background-color: aquamarine !important;
+  }
+
+  ::ng-deep  tr:nth-child(even) {
+    background-color: ghostwhite !important;
+  }
+  th{
+    font-weight: bold;
+    color: #121212;
+    font-size: larger;
+  }

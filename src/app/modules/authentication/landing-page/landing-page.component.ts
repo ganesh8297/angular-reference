@@ -1,56 +1,34 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import dummy from './dummy.json'
+import { MessageService } from 'src/app/services/message.service';
+import { commonAnimation } from 'src/app/animations/animations';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss']
+  styleUrls: ['./landing-page.component.scss'],
+  animations: [commonAnimation],
 })
 export class LandingPageComponent implements OnInit {
   labelName: any;
   date: Date | undefined;
-  bgColor: any = '#091952';
-  constructor(private elementRef: ElementRef) { }
-  // ngOnInit(): void {
-  //   // this.date = new Date();
-  //   this.countDown()
-  //   setInterval(() => {
-  //     // this.countDown()
-  //   }, 1000);
+  bgColor: any = '#e9185f';
+  dummyList: any = dummy
+  constructor(private elementRef: ElementRef, private messageService: MessageService) {
+    this.messageService.getMessage().subscribe((res: any) => {
+      console.log(res);
+    });
 
-  // }
-  // selectedTabValue(event: any) {
-  //   console.log(event);
-  //   this.labelName = event.tab.textLabel;
-  //   console.log(this.labelName)
-  //   if (this.labelName == 'COUNDOWN') {
-  //     // this.showDateTime()
-  //   }
-  // }
-  // mins: any;
-  // secs: any;
-  // countDown() {
-  //   let myDate = new Date("2023-02-08")
-  //   let currDate = new Date()
-  //   let year = currDate.getFullYear()
-  //   let month = currDate.getMonth()
-  //   let day = currDate.getDay()
-  //   let hrs = currDate.getHours()
-  //   this.mins = currDate.getMinutes()
-  //   this.secs = currDate.getSeconds()
-  //   console.log(myDate, 'myDate');
-  //   console.log(currDate, 'currDate');
-  //   console.log(month, 'month');
-  //   console.log(day, 'day');
-  //   console.log(hrs, 'hrs');
-  //   console.log(this.mins, 'mins');
-  //   console.log(this.secs, 'secs');
-  //   console.log(year, 'year');
-  // }
+    this.messageService.sendMessage('hello ganesh')
 
-
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.loderVisible = true;
+  }
+
+  loderVisible: boolean = true;
+  loginVisible: boolean = true;
   selectedTabValue(event: any) {
     console.log(event);
     this.labelName = event.tab.textLabel;
@@ -62,6 +40,11 @@ export class LandingPageComponent implements OnInit {
   ngAfterViewInit() {
     this.darkel = this.elementRef.nativeElement.querySelector('#btn-dark')
     this.lightkel = this.elementRef.nativeElement.querySelector('#btn-dark')
+
+    setTimeout(() => {
+      this.loderVisible = false
+    }, 3000);
+
   }
   darkel: any;
   lightkel: any;
@@ -69,7 +52,6 @@ export class LandingPageComponent implements OnInit {
   cambiarTema(tema: any) {
     console.log(this.mode);
     this.mode = !this.mode
-
     switch (this.mode) {
       case true:
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -79,6 +61,43 @@ export class LandingPageComponent implements OnInit {
         break;
     }
   }
+
+
+  findNoRepeatNo() {
+    function findDuplicates(array: any) {
+      var uniqueValues: any = []
+      var duplicateValues: any = [];
+
+      for (var i = 0; i < array.length; i++) {
+        var value = array[i];
+        if (uniqueValues.includes(value)) {
+          duplicateValues.push(value);
+        } else {
+          uniqueValues.push(value);
+        }
+      }
+
+      return {
+        unq: uniqueValues,
+        dup: duplicateValues
+      };
+    }
+
+    var array = [1, 2, 3, 2, 4, 1, 5, 3];
+    var duplicates = findDuplicates(array);
+    // console.log(duplicates.unq); // Output: [2, 1, 3]
+    // console.log(duplicates.dup);
+  }
+
+  loginGetValue(val: any) {
+    this.loginVisible = val;
+  }
+
+  signupGetValue(val: any) {
+    this.loginVisible = val;
+  }
+
+
 }
 
 

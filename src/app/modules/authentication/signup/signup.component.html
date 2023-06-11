@@ -1,7 +1,57 @@
-<p>signup works!</p>
-<mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-</mat-form-field>
+<form class="p-5">
+    <p class="text-left header">
+        REGISTER HERE
+    </p>
+    <div fxLayout="column" fxLayoutAlign="space-around stretch">
+        <mat-label>
+            USERNAME*
+        </mat-label>
+        <mat-form-field appearance="outline">
+            <mat-label>ENTER YOUR USERNAME</mat-label>
+            <input matInput placeholder="">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+        <mat-label>
+            PASSWORD*
+        </mat-label>
+        <mat-form-field appearance="outline">
+            <mat-label> ENTER YOUR PASSWORD</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+
+        <mat-label>
+            PASSWORD*
+        </mat-label>
+        <mat-form-field appearance="outline">
+            <mat-label> ENTER YOUR PASSWORD</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+
+        <mat-label>
+            PASSWORD*
+        </mat-label>
+        <mat-form-field appearance="outline">
+            <mat-label> ENTER YOUR PASSWORD</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+
+        <mat-label>
+            PASSWORD*
+        </mat-label>
+        <mat-form-field appearance="outline">
+            <mat-label> ENTER YOUR PASSWORD</mat-label>
+            <input matInput placeholder="">
+        </mat-form-field>
+        <button mat-raised-button class="primary-btn mt-4 mb-4">SIGNUP</button>
+        <button (click)="navigateTologin()" mat-stroked-button class="mt-4">LOGIN</button>
+
+        <!-- <div class="mt-4" fxLayout="column" fxLayoutAlign="space-between end">
+            <p class="text-center subtitle mt-4 p-1">Continue with <button mat-fab disabled
+                    aria-label="Example icon button with a heart icon">
+                    <img id="googleLogo"
+                        src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
+                        alt="">
+                </button></p>
+        </div> -->
+    </div>
+</form>

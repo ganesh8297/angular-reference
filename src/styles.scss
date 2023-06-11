@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import './assets/scssFiles/variable.scss';
+@import './assets/scssFiles/font.scss';
+@import './assets/scssFiles/buttons.scss';
+
+
 
 body {
     padding: 0 !important;
     margin: 0 !important;
-    overflow: hidden;
     font-family: Roboto-Regular;
     font-family: 'Open Sans', sans-serif;
 }
@@ -21,21 +25,20 @@ body {
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
-@import 'assets/variable.scss';
 
 
 body {
     max-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: var(--bgacolor);
-    color: var(--ccolor);
+    background-color: var(--appBackground);
+    color: var(--appFont);
 }
 
 /* Botones para cambiar tema */
 .cambiar-tema {
     position: absolute;
-    right: 70px;
-    top: 70px;
+    right: 10px;
+    top: 25px;
 }
 
 .cambiar-tema #btn-light {
@@ -81,7 +84,7 @@ section .text-primary {
 
 /* Enlace principal */
 a.primary-link {
-    background-color: var(--bgacolor);
+    background-color: var(--primary);
     padding: 10px 25px;
     border-radius: 25px;
 }
@@ -89,4 +92,98 @@ a.primary-link {
 a.primary-link:hover {
     background-color: var(--primary);
     color: #ffffff;
+}
+
+//-------loder------//
+.myloader {
+    // display: flex;
+    // margin: auto;
+    // justify-content: center;
+    // align-items: center;
+    // width: 100vw;
+    // height: 100vh;
+    position: absolute;
+    top: 42%;
+    left: 47%;
+}
+
+.custom-loader {
+    --r1: 154%;
+    --r2: 68.5%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #766DF4 80%),
+        radial-gradient(var(--r1) var(--r2) at bottom, #766DF4 79.5%, #0000 80%),
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #766DF4 80%),
+        #E4E4ED;
+    background-size: 50.5% 220%;
+    background-position: -100% 0%, 0% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    animation: p9 6s infinite linear;
+}
+
+@keyframes p9 {
+    33% {
+        background-position: 0% 33%, 100% 33%, 200% 33%
+    }
+
+    66% {
+        background-position: -100% 66%, 0% 66%, 100% 66%
+    }
+
+    100% {
+        background-position: 0% 100%, 100% 100%, 200% 100%
+    }
+}
+
+.blurBg {
+    opacity: 0.2;
+
+    * {
+        pointer-events: none;
+    }
+}
+
+
+
+mat-card {
+    margin: 10px;
+    background-color: aquamarine !important;
+}
+
+.list {
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 420px;
+    width: 100vw;
+    min-width: 700px;
+    min-height: 420px;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right top, #9e88f6, #8e93fb, #7f9cff, #72a5ff, #68adff, #4cb8ff, #2bc3ff, #00ccff, #00daf9, #00e7e9, #00f1cf, #5ff9af);
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 14px;
+    /* vertical scrollbar width */
+}
+
+*::-webkit-scrollbar-button {
+    height: 50px;
+    /* vertical scrollbar height */
 }
